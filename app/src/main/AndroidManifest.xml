@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-feature android:name="easybangumi.extension" android:required="true" />
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/app_icon"
+        android:label="EasyBangumi: 番组计划API"
+        android:supportsRtl="true">
+        <!--readme-->
+        <meta-data
+            android:name="easybangumi.extension.readme"
+            android:value="纯纯看番扩展，番组计划" />
+        <!--libVersion-->
+        <meta-data
+            android:name="easybangumi.extension.lib.version"
+            android:value="1" />
+        <!--source-->
+        <meta-data
+            android:name="easybangumi.extension.source"
+            android:value="org.easybangumi.extension.zh.bangumiapi.Factory"/>
+        <!--为了让本体能找到需要加-->
+        <activity android:name="com.heyanle.extension_api.NoneActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.ANSWER" />
+                <data android:host="com.heyanle.easybangumi"
+                    android:scheme="source"/>
+            </intent-filter>
+        </activity>
+    </application>
+    <queries>
+        <package android:name="com.heyanle.easybangumi" />
+    </queries>
+</manifest>
